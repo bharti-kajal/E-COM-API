@@ -62,6 +62,39 @@
           }
         }
       }
+    },
+      "/api/users/signup": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Signup",
+        "description": "User will get signin credentials",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User Details",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Something went wrong with database"
+          }
+        }
+      }
     }
   }
 }
